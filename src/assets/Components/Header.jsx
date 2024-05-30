@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const Header = () => {
   return (
@@ -12,9 +13,17 @@ const Header = () => {
 
       <div>
         <ul className="flex space-x-20  my-6 ml-80 text-[#f4bb01] text-xl">
-          <li className="mt-2">Home</li>
-          <li className="mt-2">Categories</li>
-          <button className="bg-[#f4bb01] py-4 px-8 text-black text-sm  rounded-md">Watch on Netflix</button>
+       <Link to='/'>
+       <li className="mt-2">Home</li>
+       </Link>
+     
+       
+       <li className="mt-2">Categories</li>
+       
+       <Link to='https://www.netflix.com/ug/'>
+       <button className="bg-[#f4bb01] py-4 px-8 text-black text-sm  rounded-md">Watch on Netflix</button>
+
+       </Link>
         </ul>
        
       </div>
