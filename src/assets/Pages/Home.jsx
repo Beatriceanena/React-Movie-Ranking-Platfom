@@ -10,7 +10,7 @@ import Footer from '../Components/Footer'
 const Home = () => {
   let [genres, setGenres] = useState(null)
 function fetchData() {
-  let apiUrl = "https://movieplatform-strapi-backend.onrender.com/genres";
+  let apiUrl = "https://movieplatform-strapi-backend.onrender.com/api/genres";
   console.log(genres)
   fetch(apiUrl)
     .then((response) => {
