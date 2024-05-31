@@ -9,22 +9,23 @@ import Footer from '../Components/Footer'
 
 const Home = () => {
   let [genres, setGenres] = useState(null)
-function fetchData() {
-  let apiUrl = "https://movieplatform-strapi-backend.onrender.com/api/genres";
-  console.log(genres)
-  fetch(apiUrl)
-    .then((response) => {
-      return response.json();
-    })
+  function fetchData() {
+    let apiUrl = "https://movieplatform-strapi-backend.onrender.com/api/genres?populate=*";
+    console.log(genres)
+    fetch(apiUrl)
+      .then((response) => {
+        return response.json();
+      })
 
-    .then((dataObject) => {
-      let genreData = dataObject.data
-      setGenres(genreData)
-    })
-}
-useEffect(() => {
-  fetchData();
-}, [])
+      .then((dataObject) => {
+        let genreData = dataObject.data
+        console.log(genreData)
+        setGenres(genreData)
+      })
+  }
+  useEffect(() => {
+    fetchData();
+  }, [])
 
   return (
     <div>
@@ -35,23 +36,23 @@ useEffect(() => {
 
         <div className="">
           <ul className="flex justify-center my-12 space-x-8 text-black ">
-     
-          <Link to='/Action'>
-          <li className=" py-4 px-16 bg-[#f4bb01] rounded-md">Action</li>
-          </Link>
-      
-          <Link to='/Drama'>
-          <li className=" py-4 px-16 bg-[#f4bb01] rounded-md">Drama</li>
-          </Link>
 
-          <Link to='/Thriller'>
-          <li className=" py-4 px-16 bg-[#f4bb01] rounded-md">Thriller</li>
-          </Link>
-       
-          <Link to='/Adventure'>
-          <li className=" py-4 px-16 bg-[#f4bb01] rounded-md">Adventure</li>
-          </Link>
-     
+            <Link to='/Action'>
+              <li className=" py-4 px-16 bg-[#f4bb01] rounded-md">Action</li>
+            </Link>
+
+            <Link to='/Drama'>
+              <li className=" py-4 px-16 bg-[#f4bb01] rounded-md">Drama</li>
+            </Link>
+
+            <Link to='/Thriller'>
+              <li className=" py-4 px-16 bg-[#f4bb01] rounded-md">Thriller</li>
+            </Link>
+
+            <Link to='/Adventure'>
+              <li className=" py-4 px-16 bg-[#f4bb01] rounded-md">Adventure</li>
+            </Link>
+
           </ul>
         </div>
       </div>
@@ -62,7 +63,7 @@ useEffect(() => {
 
       <div className="flex justify-around w-[93%] m-auto md:flex-wrap">
         {
-          genres!== null? (
+          genres !== null ? (
             genres.map((item) => {
               return (
                 <Cards

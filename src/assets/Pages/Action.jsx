@@ -7,7 +7,7 @@ import { useEffect, useState } from 'react'
 const Action = () => {
   let [actions, setActions] = useState(null)
   function fetchData() {
-    let apiUrl = "https://movieplatform-strapi-backend.onrender.com/api/actions";
+    let apiUrl = "https://movieplatform-strapi-backend.onrender.com/api/actions?populate=*";
     console.log(actions)
     fetch(apiUrl)
       .then((response) => {

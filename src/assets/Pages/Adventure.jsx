@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom'
 const Adventure = () => {
   let [adventures, setAdventures] = useState(null)
   function fetchData() {
-    let apiUrl = "https://movieplatform-strapi-backend.onrender.com/api/adventures";
+    let apiUrl = "https://movieplatform-strapi-backend.onrender.com/api/adventures?populate=*";
     console.log(adventures)
     fetch(apiUrl)
       .then((response) => {

@@ -9,7 +9,7 @@ import { Link } from 'react-router-dom'
 const Thriller = () => {
   let [thrillers, setThrillers] = useState(null)
   function fetchData() {
-    let apiUrl = "https://movieplatform-strapi-backend.onrender.com/api/thrillers";
+    let apiUrl = "https://movieplatform-strapi-backend.onrender.com/api/thrillers?populate=*";
     console.log(thrillers)
     fetch(apiUrl)
       .then((response) => {
