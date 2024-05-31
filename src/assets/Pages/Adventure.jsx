@@ -38,7 +38,7 @@ const Adventure = () => {
          return (
            <Cards
              key={item.id}
-             image={`http://localhost:1337${item.attributes.image.data[0].attributes.url}`}
+             image={item.attributes.image.data[0].attributes.url}
              category={item.attributes.title}
              link={item.attributes.link}
            />
